@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/headerfooter.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/profile.css" />
+  <script src="../js/index.js" defer></script>
+  <script src="../js/profile.js" defer></script>
+  <title>Profile - EcoHimalaya Online Store</title>
+</head>
+
+<body>
+  <header class="header">
+    <a href="index.html" class="logo"><img src="../images/logo.png" alt="Company Logo"></a>
+    <input class="side-menu" type="checkbox" id="side-menu" />
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <nav class="nav">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Product</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+        <li><a href="faq.html">Faq</a></li>
+        <li class="hello-name">Hello, <span id="name-user"><a id="user-info" href="profile.html">Eco-Himalaya</a></span></li>
+        <li><a class="cart-menu" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2>User Profile</h2>
+      <div id="profile-info">
+        <p><strong>Username:</strong> <span id="username">N/A</span></p>
+        <p><strong>Email:</strong> <span id="email">N/A</span></p>
+        <p><strong>Phone Number:</strong> <span id="phoneNumber">N/A</span></p>
+        <p><strong>Date of Birth:</strong> <span id="dob">N/A</span></p>
+      </div>
+      <button id="editProfileBtn">Edit Profile</button>
+      <button id="signoutBtn">Sign Out</button>
+      <p id="signupLink" style="display: none;">Not logged in? <a href="signup.html">Sign Up</a></p>
+      
+      <div id="editProfileSection" style="display: none;">
+        <h3>Edit Profile</h3>
+        <form id="editProfileForm">
+          <label for="editUsername">Username:</label>
+          <input type="text" id="editUsername" name="editUsername" required>
+          
+          <label for="editEmail">Email:</label>
+          <input type="email" id="editEmail" name="editEmail" required>
+          
+          <label for="editPhoneNumber">Phone Number:</label>
+          <input type="tel" id="editPhoneNumber" name="editPhoneNumber" required>
+          
+          <label for="editDob">Date of Birth:</label>
+          <input type="date" id="editDob" name="editDob" required>
+          
+          <label for="editPassword">New Password:</label>
+          <input type="password" id="editPassword" name="editPassword">
+          
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword">
+          
+          <button type="submit">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for the product details section */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Layout for the product details */
+.product-details-container {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+/* Product image styling */
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Product information styling */
+.product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Styling for product title, description, and price */
+.product-info h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.product-info #product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Add to cart button styling */
+.add-to-cart-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.add-to-cart-button a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.add-to-cart-button:hover {
+    background-color: #218838;
+}

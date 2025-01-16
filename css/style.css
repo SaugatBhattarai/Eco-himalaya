@@ -1,0 +1,725 @@
+
+/*************** HERO START PART *************************/
+.mm-homepage-hero {
+    background: url("../images/hero.png") center center;
+    color: white;
+    min-height: 89vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-size: cover;
+    width:100%;
+  }
+
+  .mm-homepage-hero-title {
+    max-width: 820px;
+    line-height: 2rem;
+    margin-bottom: 0;
+    font-weight: 300;
+    font-size: 1.25rem;
+    text-align: center;
+    padding:0 0.5rem;
+  }
+
+  /*************Animation in hero-section************/
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mm-homepage-hero-subtitle {
+  opacity: 0;
+  animation: slideDown 2s forwards;
+}
+
+
+.animate-slideDown {
+  animation: slideDown 3s forwards;
+}
+
+/***************************************************/
+
+  @media only screen and (max-width: 768px) {
+    .mm-homepage-hero-title {
+      line-height: 1.5rem !important;
+    }
+  }
+  @media only screen and (max-width: 576px) {
+    .mm-homepage-hero-title,
+    .page-title {
+      line-height: 1.25rem !important;
+      font-size: 1.125rem;
+    }
+   
+    .mm-homepage-hero-subtitle {
+      font-size: 1.5rem !important;
+    }
+  } 
+  
+  @media only screen and (max-width: 320px) {
+    .mm-homepage-hero-title {
+      line-height: 1.5rem !important;
+    }
+    .mm-homepage-hero-subtitle {
+      line-height: 1.5rem !important;
+      margin: 10px 0 !important;
+    }
+  }
+
+  #hero-section a{
+    margin:1em;
+  }
+
+  .mm-homepage-herobutton1 { 
+    background-color: #52C772;
+    padding: 0.675rem 1.5rem;
+    color: white!important;
+    text-decoration: none;
+    font-size: 1.125em;
+    border-radius: 0.375em;
+    text-transform: uppercase;
+    border-color: #52C772;
+  }
+  
+  .mm-homepage-herobutton1:hover {
+    background: #477E6A;
+    color: white;
+    border-color: #477E6A;
+  }
+
+  .mm-homepage-herobutton2 { 
+    padding: 0.60rem 1rem;
+    color: white!important;
+    text-decoration: none;
+    font-size: 1.125em;
+    border-radius: 0.375em;
+    text-transform: uppercase;
+    border: 3px solid #52C772;
+  }
+  
+  .mm-homepage-herobutton2:hover {
+    background: #477E6A;
+    color: white;
+    border-color: #477E6A;
+  }
+  
+  #herobutton {
+    margin-top: 2em;
+  }
+
+
+  .mm-homepage-hero-subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 3rem;
+    text-align: center;
+    max-width: 820px;
+    padding:0 0.5rem;
+  }
+  
+  #eco {
+    color: #52C772;
+  }
+
+  #himalaya{
+    color: #477E6A;
+  }
+
+  @media screen and (max-width: 768px) {
+    .mm-homepage-hero {
+      min-height: 50vh;
+    }
+  }
+
+
+/*************** HERO PART END *************************/
+
+/****** About Section Starts Here *******************/
+
+.company-blue-bold {
+    color: #006699;
+    font-weight: 800;
+    letter-spacing: .056rem;
+    line-height: 2.5rem;
+}
+.about-text-wrapper{
+  margin: 0px auto;
+}
+
+.about-text-title{
+  text-align: center;
+  font-size: 1.25em;
+  color:#477E6A;
+}
+
+.about-text-subtitle {
+  letter-spacing: 0.3px;
+  word-spacing: 5px;
+  opacity: 0.8;
+  font-size: 1.25rem;
+  margin: 1rem 2rem 0 2rem;
+  color:#000;
+}
+
+#about-section .learn-more a{
+  color:#ffffff;
+}
+/************** Ends Here ************************/
+
+/********* Introduction Section Starts Here ***********/
+section#about-section {
+  background-color: #F3F3F3;
+  /* padding:2rem 0 2rem 0; */
+  background-image: url('../images/welcome2.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 50px 0px;
+  background-color: #fff;
+  
+}
+
+section#about-section .col-left img{
+  width: 600px;
+}
+
+#about-section .learn-more{
+  padding: 12px 20px;
+  border: 2px solid #477E6A;
+  color:#477E6A;
+  width: 240px;
+  font-weight: 300;
+  text-align: center;
+  margin:30px auto;
+  border-radius: 0.375em;
+}
+#about-section .learn-more a{
+  color:#000000;
+}
+#about-section .learn-more a:hover{
+  color:#ffffff;
+}
+#about-section .learn-more:hover{
+  background-color: #477E6A;;
+  color:#ffffff;
+  cursor: pointer;
+}
+
+#about-section .row {
+  display: flex;
+  flex-direction: row;
+}
+
+#about-section .row .col-left{
+  width: 100%;
+  /* display: block; */
+}
+@media screen and (max-width: 992px){
+  #about-section .row .col-left{
+    width: 100%;
+    display: none;
+
+  }
+  /* #about-section .row .col-right{
+    text-align: center;
+  } */
+
+  #about-section .about-text-subtitle {
+    margin:0;
+    text-align: center;
+    margin:0 1.5rem;
+  }
+
+  #about-section .row .col-right {
+    margin-top: 0% !important;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  #about-section .mobile-view{
+    display: none;
+  }
+}
+
+#about-section .row .col-right{
+  margin-top:8%;
+  width: 50%;
+  margin-left:45%;
+}
+/********* Introduction Section Ends Here ***********/
+
+/********* Service Section Starts Here ***********/
+#service-list {
+  /* background: url("../images/barbershop_1.png") center center; */
+  color: white;
+  /* min-height: 90vh; */
+  background-size: cover;
+  width:100%;
+}
+
+
+
+.wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0 1rem 0;
+}
+.search {
+  width: 30%;
+  /* position: relative; */
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #477E6A;
+  border-right: none;
+  padding: 0.5rem 1rem;
+  line-height: 18px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #000000;
+}
+
+.searchTerm:focus{
+  color: #000000;
+}
+
+.searchButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #477E6A;
+  background: #477E6A;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+
+#service-list .service-title{
+  text-align: center;
+  font-size: 1.25em;
+  color:#477E6A;
+  padding:40px 0 0 0;
+}
+
+#service-list .service-subtitle{
+  color: #595959;
+  text-align: center;
+  margin: 0 1em 1em 1em;
+}
+
+#service-list .service-description .service-each{
+  max-width: 32%;
+  text-align: center;
+  background-color: #ffffff;
+  margin: 1em 0.25em;
+  padding:0.5em;
+  border: 1px solid #f3f3f3;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  transition: box-shadow 0.5s;
+  border-radius: 8px;
+}
+
+#service-list .service-description .service-each:hover{
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+@media screen and (max-width:992px) {
+  #service-list .service-description .service-each{
+    max-width: 48% !important;
+  }
+
+  #service-list .service-description{
+    /* flex-direction: column !important; */
+    align-items: center;
+  }
+}
+
+@media screen and (max-width:561px) {
+  #service-list .service-description .service-each{
+    max-width: 100% !important;
+  }
+}
+
+#service-list .service-description .service-each img{
+  width: 100%;
+  object-fit: cover;
+  height: 260px;
+}
+
+#service-list .service-description{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#service-list .service-name{
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.25em;
+  color:#000000;
+  opacity: 0.7;
+}
+
+#service-list .service-desc{
+  font-size: 1em;
+  color:#000000;
+  opacity: 0.8;
+  padding: 0 0.5em;
+}
+
+#service-list .book-now-button{
+  padding: 0.75em 1.25em;
+  border: 2px solid #477E6A;
+  color:#477E6A;
+  width: 70%;
+  font-weight: 300;
+  text-align: center;
+  margin:1em auto;
+  border-radius: 0.375em;
+}
+
+#service-list .book-now-button:hover{
+  background-color: #477E6A;
+  color:#fff;
+  cursor: pointer;
+}
+
+/* Disabled state style for the "Add to Cart" button */
+#service-list .book-now-button:disabled {
+  background-color: #d3d3d3; /* Light gray background */
+  color: #a9a9a9; /* Darker gray text */
+  cursor: not-allowed; /* Not-allowed cursor */
+  border: 1px solid #ccc; /* Light gray border */
+  box-shadow: none; /* Remove box shadow */
+}
+
+#service-list .book-now-button a{
+  color:#000;
+  font-weight: 600;
+  opacity: 0.7;
+}
+#service-list .book-now-button a:hover{
+  color:#fff;
+}
+
+#service-list  .more-services{
+  margin:1.5em auto;
+  text-align: center;
+}
+
+#service-list .more-services-btn{
+  padding: 12px 20px;
+  border: 2px solid #477E6A;
+  color:#fff;
+  width: 220px;
+  font-weight: 300;
+  text-align: center;
+  margin:30px auto;
+  border-radius: 0.375em;
+  background-color: #477E6A;;
+  cursor: pointer;
+} 
+#service-list .more-services-btn a{
+  color:#fff;
+}
+
+#service-list .more-services-btn:hover{
+  background: #477E6A;
+  color: white;
+  border-color: #477E6A;
+  cursor: pointer;
+}
+
+.service-each .service-price{
+  color: #477E6A;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+/********* Service Section Ends Here ***********/
+
+/********* Customer Review Start Here ***********/
+#customer-review {
+  padding-bottom: 3em;
+  background-color:#F3F3F3;
+}
+
+#customer-review .customer-title{
+  text-align: center;
+  font-size: 1.25em;
+  color: #477E6A;
+  padding: 2.5em 0 0 0;
+}
+
+#customer-review .customer-subtitle{
+  color: #595959;
+  text-align: center;
+  margin-bottom: 1em;
+  padding: 0 1em;
+}
+
+#customer-review .review-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;    
+}
+
+#customer-review .review-card img{
+  width:140px;
+  border-radius: 50%;
+  z-index: 111;
+}
+
+#customer-review .review-description{
+  background-color: #E6E6E6;
+  width: 95%;
+  margin-top: -5em;
+  padding-bottom: 1em;
+}
+
+#customer-review .customer-description{
+  margin-top: 6.25em;
+  text-align: center;
+  font-style: italic;
+  padding: 0em 2em;
+  color: #495057;
+}
+
+#customer-review .customer-name{
+  text-align: center;
+  color:#477E6A;
+  font-size: 1em;
+}
+
+/********* Customer Review Ends Here ***********/
+
+/********* Book an Appointment Starts Here ***********/
+
+#contact-review {
+  margin-bottom: 3em;
+}
+
+#contact-review .contact-title{
+  text-align: center;
+  font-size: 1.25em;
+  color: #477E6A;
+  padding: 2.5em 0 0 0;
+}
+
+#contact-review .contact-subtitle{
+  color: #595959;
+  text-align: center;
+  margin-bottom: 1em;
+  padding: 0 1em;
+}
+
+#contact-review .contact-form-text{
+  background-color: #f2f2f2;
+  padding: 0.75em 1em;
+  margin:1em 0;
+  border-radius: 0.25rem;
+  /* background-color: rgb(242 242 242 / 50%) !important; */
+  border: 0 !important;
+  color: #495057;
+  letter-spacing: 0.3px;
+}
+#contact-review .contact-form-text:hover{
+  box-shadow: 0 0 0 0.2rem rgb(224 120 39 / 50%);
+  border-radius: 0.25rem;
+  border: 0 !important;
+}
+#contact-review .contact-form-text:active{
+  box-shadow: 0 0 0 0.2rem rgb(224 120 39 / 50%);
+  border-radius: 0.25rem;
+  border: 0 !important;
+  /* border-color : transparent; */
+}
+
+#contact-review .contact-form-text:focus{
+  box-shadow: 0 0 0 0.2rem rgb(224 120 39 / 50%);
+  border-radius: 0.25rem;
+  border: 0 !important;
+}
+
+/* #contact-review .contact-main{
+  display: flex;
+  justify-content: center;
+} */
+
+#contact-review form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 570px;
+  margin:0 auto;
+}
+
+#contact-review .contact-form-btn{
+  color: #fff;
+  background-color: #477E6A;
+  border-color: #477E6A;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  padding:1em 0;
+  cursor: pointer;
+  border: 0 !important;
+  border-radius: 0.25rem
+}
+
+#contact-review textarea {
+  resize: none;
+}
+
+/********* Book an Appointment Ends Here ***********/
+
+/******************************** Top Nav Starts Here *************************/
+#top-hero{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/banner.svg) center center;
+  color: white;
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+}
+
+/********************************* Top Nav Ends Here ****************************/
+
+/******************* Available time table *********************/
+.wrapper{
+	font-size: 1em;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+#working_hour{
+  text-align: center;
+  font-size: 1.25em;
+  color: #006699;
+  padding: 2.5em 0 0 0;
+  text-transform: uppercase;
+}
+
+.available-table .working-subtitle{
+  color: #595959;
+  text-align: center;
+  margin-bottom: 1em;
+  padding: 0 1em;
+}
+
+table {
+  	margin: 0 5% 0 5%;
+    border-collapse: collapse;
+}
+  
+th, td {
+    padding: 12px 40px 12px 40px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+  
+th {
+    background: linear-gradient(to bottom, #df721d, #db9c69);
+    color: white;
+  }
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.day{
+	background-color: #2f4460;
+	color: white;
+}
+
+#hide{
+	background: transparent;
+	box-shadow: none;
+}
+
+th, .open, .close{
+	text-align: center;
+	box-shadow: 5px 1px 14px 0px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 768px) {
+
+	.wrapper{
+		font-size: 0.8em;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+		.wrapper{
+			font-size: 0.6em;
+		}
+
+    th, td {
+    padding: 12px 26px 12px 26px;
+  }
+  }
+
+  /******* Available time table ends Here *************/
+
+
+  /******* FAQ *****/
+#faq-page {
+  margin:2rem auto;
+}
+.faq-container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.faq-item {
+    /* border-bottom: 1px solid #ccc; */
+    padding: 10px 0;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 1rem 1rem;
+    background-color: #DFF2EA;
+    border-radius: 6px;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.toggle-icon {
+    font-weight: bold;
+}
+#top-hero-faq{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/banner-faq.jpeg) center center;
+  color: white;
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+}

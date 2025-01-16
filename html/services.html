@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../images/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>EcoHimalaya Online Store</title>
+  <link rel="stylesheet" href="../css/headerfooter.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/services.css">
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+  <script src="../js/index.js"></script>
+  <script>
+    // Function to add a product to the cart and disable the button
+    function addToCart(productId, button) {
+      // Fetch products from localStorage
+      const products = JSON.parse(localStorage.getItem('productsData'));
+      const allProducts = [...products.utensils, ...products.bags, ...products.body_wears];
+      const product = allProducts.find(p => p.productId === productId);
+  
+      if (product) {
+        // Get or initialize the cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const productIndex = cart.findIndex(item => item.productId === product.productId);
+  
+        // Update quantity if the product is already in the cart, otherwise add new
+        if (productIndex > -1) {
+          cart[productIndex].quantity += 1;
+        } else {
+          product.quantity = 1;
+          cart.push(product);
+        }
+  
+        // Save the updated cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        // Disable the button and update its text
+        button.disabled = true;
+        button.innerText = 'Added to Cart';
+  
+        // Optional: Show an alert or update UI to notify the user
+        alert('Product added to cart!');
+      } else {
+        alert('Product not found.');
+      }
+    }
+  
+    $(function () {
+      $("#tabs").tabs();
+    });
+  
+    async function loadProducts() {
+      try {
+        const response = await fetch('../data/products1.json');
+        const products = await response.json();
+        return products;
+      } catch (error) {
+        console.error('Error loading products:', error);
+      }
+    }
+  
+    // Store product details in localStorage and redirect to product details page
+    function storeProductDetails(productId) {
+      const products = JSON.parse(localStorage.getItem('productsData'));
+      let selectedProduct = null;
+  
+      Object.keys(products).forEach(category => {
+        const foundProduct = products[category].find(product => product.productId === productId);
+        if (foundProduct) selectedProduct = foundProduct;
+      });
+  
+      if (selectedProduct) {
+        localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
+        window.location.href = "product-details.html"; // Redirect to product details page
+      }
+    }
+  
+    // Display products
+    function displayProducts(products) {
+      localStorage.setItem('productsData', JSON.stringify(products)); // Store all products data in localStorage
+  
+      const tabs = ["utensils", "bags", "body_wears"];
+      tabs.forEach(tab => {
+        const container = $(`#tabs-${tabs.indexOf(tab) + 1} .service-description`);
+        container.empty();
+        products[tab].forEach(product => {
+          const productHtml = `
+            <div class="service-each">
+              <img src="${product.image}" alt="${product.name}" onclick="storeProductDetails('${product.productId}')" />
+              <h6 class="service-name">${product.name}</h6>
+              <p class="service-desc">${product.description}</p>
+              <p class="service-price">${`$${product.price}`}</p>
+              <button class="book-now-button" onclick="addToCart('${product.productId}', this)">Add to Cart</button>
+            </div>
+          `;
+          container.append(productHtml);
+        });
+      });
+    }
+  
+    // Search products
+    function searchProducts(query, products) {
+      const searchResults = {
+        utensils: products.utensils.filter(product => product.name.toLowerCase().includes(query.toLowerCase())),
+        bags: products.bags.filter(product => product.name.toLowerCase().includes(query.toLowerCase())),
+        body_wears: products.body_wears.filter(product => product.name.toLowerCase().includes(query.toLowerCase()))
+      };
+      displayProducts(searchResults);
+    }
+  
+    $(document).ready(async function () {
+      const products = await loadProducts();
+      displayProducts(products);
+  
+      $('.searchButton').on('click', function () {
+        const query = $('.searchTerm').val();
+        searchProducts(query, products);
+      });
+  
+      $('.searchTerm').on('keypress', function (e) {
+        if (e.which === 13) {
+          const query = $('.searchTerm').val();
+          searchProducts(query, products);
+        }
+      });
+    });
+  </script>
+  
+
+</head>
+
+<body>
+  <header class="header">
+    <a href="index.html" class="logo"><img src="../images/logo.png" alt="Company Logo"></a>
+    <input class="side-menu" type="checkbox" id="side-menu" />
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <nav class="nav">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Product</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+        <li><a href="faq.html">Faq</a></li>
+        <li class="hello-name">Hello, <span id="name-user">Eco-Himalaya</span></li>
+        <li><a class="cart-menu" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="service-page">
+    <section class="container-fluid" id="top-hero">
+      <h1>Products</h1>
+    </section>
+    <section class="search-bar">
+      <div class="wrap">
+        <div class="search">
+          <input type="text" class="searchTerm" placeholder="What are you looking for?">
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="service-list" class="container-fluid">
+      <div class="container">
+
+        <div id="tabs">
+          <ul>
+            <li><a href="#tabs-1">Utensils</a></li>
+            <li><a href="#tabs-2">Bags</a></li>
+            <li><a href="#tabs-3">Body Wears</a></li>
+          </ul>
+          <div id="tabs-1">
+            <div class="service-description">
+            </div>
+          </div>
+          <div id="tabs-2">
+            <div class="service-description">
+            </div>
+          </div>
+          <div id="tabs-3">
+            <div class="service-description">
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="footer-col" id="footer_quote">
+          <a href="index.html" alt="Footer Logo"><img src="../images/logo.png" class="footer_logo"></a><br>
+          <p>"We Empower confidence through personalized care and exquisite services. Discover your true beauty with
+            EcoHimalaya Mart."</p>
+        </div>
+        <div class="footer-col" id="contact_us">
+          <h4>CONTACT US</h4>
+          <ul>
+            <li><a href="https://www.google.com/maps/"><i class="fa-solid fa-location-dot"></i>123 North York,ON</a>
+            </li>
+            <li><a href="tel:+1234567898"><i class="fa-solid fa-phone"></i>+1234567898</a></li>
+            <li><a href="mailto:everestsalon@gmail.com"><i class="fa-solid fa-envelope"></i>EcoHimalaya@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col" id="follow_us">
+          <h4>FOLLOW US</h4>
+          <div class="footer-col-icon">
+            <ul>
+              <li><a href="https:www.instagram.com"><img src="../images/instagram.svg"></a></li>
+              <li><a href="https:www.facebook.com"><img src="../images/facebook.svg"></a></li>
+              <li><a href="https:www.youtube.com"><img src="../images/youtube.svg"></i></a></li>
+              <li><a href="https:www.x.com"><img src="../images/x.svg"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="copyright">
+      <p>Copyright &copy;2024 EcoHimalaya Market. All Rights Reserved</p>
+    </div>
+  </footer>
+</body>
+
+</html>

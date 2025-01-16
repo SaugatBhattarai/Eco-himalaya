@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+    <title>EcoHimalaya Online Store</title>
+    <link rel="stylesheet" href="../css/headerfooter.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../js/index.js"></script>
+    <script src="../js/scripts.js"></script>
+</head>
+<body>
+    <header class="header">
+      <a href="index.html" class="logo"><img src="../images/logo.png" alt="Company Logo"></a>
+      <input class="side-menu" type="checkbox" id="side-menu" />
+      <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+      <nav class="nav">
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Product</a></li>
+          <li><a href="contacts.html">Contact</a></li>
+          <li><a href="faq.html">Faq</a></li>
+          <li class="hello-name">Hello, <span id="name-user">Eco-Himalaya</span></li>
+          <li><a class="cart-menu" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+      </nav>
+    </header>
+
+      <main>
+        <section class="container-fluid" id="top-hero-faq">
+            <h1>Frequenty Asked Questions (FAQs)</h1>
+        </section>
+        <div id="faq-page" class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    What makes your products eco-friendly?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Our products are made from sustainable, organic, and recyclable materials. We ensure that our manufacturing processes minimize environmental impact and our packaging is biodegradable or made from recycled materials.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    What is your return policy? 
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer"> 
+                    We offer a 30-day return policy for all our products. If you are not satisfied with your purchase, you can return it within 30 days for a full refund or exchange, provided the item is in its original condition.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    Do you offer international shipping?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we ship to many countries worldwide. Shipping fees and delivery times vary based on the destination. Please check our shipping policy page for more details.
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    What payment methods do you accept?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    We accept a variety of payment methods, including major credit cards (Visa, MasterCard, American Express), PayPal, and Apple Pay. All transactions are secured with advanced encryption. 
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    Do you offer any discounts or promotions?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we regularly offer discounts and promotions. Sign up for our newsletter to stay updated on the latest deals and exclusive offers. You can also check our promotions page for current discounts. 
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    How do you handle product packaging to minimize waste? 
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    We use minimal packaging made from recycled and biodegradable materials. Our packaging is designed to be reusable or easily recyclable, and we avoid unnecessary plastic.
+                </div>
+            </div>
+        </div>
+      </main>
+     
+
+    <footer>
+        <div class="container">
+          <div class="row">
+            <div class="footer-col" id="footer_quote">
+              <a href="index.html" alt="Footer Logo"><img src="../images/logo.png" class="footer_logo"></a><br>
+              <p>"We Empower confidence through personalized care and exquisite services. Discover your true beauty with
+                EcoHimalaya Mart."</p>
+            </div>
+            <div class="footer-col" id="contact_us">
+              <h4>CONTACT US</h4>
+              <ul>
+                <li><a href="https://www.google.com/maps/"><i class="fa-solid fa-location-dot"></i>123 North York,ON</a>
+                </li>
+                <li><a href="tel:+1234567898"><i class="fa-solid fa-phone"></i>+1-234-567-0898</a></li>
+                <li><a href="mailto:everestsalon@gmail.com"><i class="fa-solid fa-envelope"></i>info@ecohimalaya.com</a></li>
+              </ul>
+            </div>
+            <div class="footer-col" id="follow_us">
+              <h4>FOLLOW US</h4>
+              <div class="footer-col-icon">
+                <ul>
+                  <li><a href="https:www.instagram.com"><img src="../images/instagram.svg"></a></li>
+                  <li><a href="https:www.facebook.com"><img src="../images/facebook.svg"></a></li>
+                  <li><a href="https:www.youtube.com"><img src="../images/youtube.svg"></i></a></li>
+                  <li><a href="https:www.x.com"><img src="../images/x.svg"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="copyright">
+          <p>Copyright &copy;2024 EcoHimalaya Market. All Rights Reserved</p>
+        </div>
+      </footer>
+</body>
+</html>

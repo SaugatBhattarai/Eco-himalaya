@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>EcoHimalaya Online Store</title>
+    <link rel="stylesheet" href="../css/headerfooter.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/cart.css">
+    <script src="../js/index.js"></script>
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const container = document.querySelector('.product-container');
+            container.innerHTML = '';
+
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                const itemSubtotal = item.quantity * item.price;
+                subtotal += itemSubtotal;
+
+                const productHtml = `
+                    <div class="product-summary" data-product-id="${item.productId}">
+                        <img src="${item.image}" alt="Product Image" class="product-image">
+                        <div class="product-details">
+                            <p class="product-title">${item.name}</p>
+                            <div class="product-property">
+                                <p><strong>Product ID:</strong> ${item.productId || 'No Brand'}</p>
+                                <p><strong>Category:</strong> ${item.category || 'N/A'}</p>
+                                <p><strong>Size:</strong> ${item.size || 'Regular'}</p>
+                            </div>
+                            <p class="product-price">$${item.price}</p>
+                            <div class="quantity-controls">
+                                <button onclick="decrement('${item.productId}')" class="quantity-button">-</button>
+                                <span class="quantity">${item.quantity}</span>
+                                <button class="quantity-button" onclick="increment('${item.productId}')">+</button>
+                                <button class="delete-button" onclick="removeItem('${item.productId}')"><img src="../images/icons/delete.svg"></button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', productHtml);
+            });
+
+            document.querySelector('.total-price').innerText = `$${subtotal}`;
+        }
+
+        function increment(productId) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const item = cart.find(p => p.productId === productId);
+            if (item) {
+                item.quantity += 1;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart();
+            }
+        }
+
+        function decrement(productId) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const item = cart.find(p => p.productId === productId);
+            if (item && item.quantity > 1) {
+                item.quantity -= 1;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart();
+            }
+        }
+
+        function removeItem(productId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(p => p.productId !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function proceedToCheckout() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+            if (cart.length === 0) {
+                // If cart is empty, redirect to product page
+                window.location.href = 'services.html';
+            } else if (loggedInUser) {
+                // If user is logged in, place order
+                alert('Your order has been placed successfully!');
+                localStorage.removeItem('cart'); // Clear cart after placing order
+                window.location.href = 'index.html'; // Redirect to homepage
+            } else {
+                // If user is not logged in, redirect to signup page
+                window.location.href = 'signup.html';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadCart);
+    </script>
+</head>
+<body>
+<header class="header">
+    <a href="index.html" class="logo"><img src="../images/logo.png" alt="Company Logo"></a>
+    <input class="side-menu" type="checkbox" id="side-menu" />
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <nav class="nav">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Product</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+        <li><a href="faq.html">Faq</a></li>
+        <li class="hello-name">Hello, <span id="name-user">Eco-Himalaya</span></li>
+        <li><a class="cart-menu" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+<main class="cart-main container-fluid">
+    <div class="product-container"></div>
+    <div class="order-summary">
+        <h2>Order Summary</h2>
+        <p><strong>Subtotal:</strong></p>
+        <p class="total-price">$0</p>
+        <button class="checkout-button" onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </div>
+</main>
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="footer-col" id="footer_quote">
+          <a href="index.html" alt="Footer Logo"><img src="../images/logo.png" class="footer_logo"></a><br>
+          <p>"We Empower confidence through personalized care and exquisite services. Discover your true beauty with
+            EcoHimalaya Mart."</p>
+        </div>
+        <div class="footer-col" id="contact_us">
+          <h4>CONTACT US</h4>
+          <ul>
+            <li><a href="https://www.google.com/maps/"><i class="fa-solid fa-location-dot"></i>123 North York,ON</a>
+            </li>
+            <li><a href="tel:+1234567898"><i class="fa-solid fa-phone"></i>+1234567898</a></li>
+            <li><a href="mailto:everestsalon@gmail.com"><i class="fa-solid fa-envelope"></i>EcoHimalaya@gmail.com</a></li>
+          </ul>
+        </div>
+        <div class="footer-col" id="follow_us">
+          <h4>FOLLOW US</h4>
+          <div class="footer-col-icon">
+            <ul>
+              <li><a href="https:www.instagram.com"><img src="../images/instagram.svg"></a></li>
+              <li><a href="https:www.facebook.com"><img src="../images/facebook.svg"></a></li>
+              <li><a href="https:www.youtube.com"><img src="../images/youtube.svg"></i></a></li>
+              <li><a href="https:www.x.com"><img src="../images/x.svg"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="copyright">
+      <p>Copyright &copy;2024 EcoHimalaya Market. All Rights Reserved</p>
+    </div>
+  </footer>          
+</body>
+</html>

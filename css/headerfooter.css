@@ -1,0 +1,395 @@
+/* Loading Fonts */
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"); */
+
+/* Default theme */
+:root{
+    --white: #f9f9f9;
+    --black: #36383F;
+    --grey: #85888C;
+    --light-background: #f7f7f7;
+    --blue-background:#1A2035;
+    --orange: #EAA26A;
+}
+
+/* CSS Reset Code */
+*, ::after, ::before{ /* CSS Reset Code*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--white);
+    font-family: segoe-vf, sans-serif;
+    letter-spacing: 0.2px;
+    width: 100%;
+}
+.container-fluid{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+@media screen and (min-width: 1400px) {  
+    .container{
+      max-width: 1320px;
+    }
+}
+  
+.container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Header */
+a{
+    text-decoration: none;
+  }
+  
+  ul{
+    list-style: none;
+  }
+  
+  .header{
+      background-color: #F5FFF8;
+      box-shadow: 1px 1px 5px 0px var(--grey);
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+  }
+  
+  /* Logo */
+  .logo{
+      display: inline-block;
+      color: var(--white);
+      /* font-size: 60px; */
+      margin-left: 2rem;
+  
+  }
+  
+  /* Nav menu */
+  .nav{
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      background-color: var(--black);
+      overflow: hidden;
+      
+  }
+  
+  .menu a{
+      display: block;
+      padding: 29px;
+      color: var(--black);
+      padding: 5px 10px;
+      text-align: center;
+  }
+  
+  .menu #name-user{
+    display: block;
+    color:#477E6A;
+    text-transform: capitalize;
+  }
+  .menu a:hover{
+      background-color: var(--grey);
+  }
+  
+  .nav{
+      max-height: 0;
+      transition: max-height .5s ease-out;
+  }
+  
+  /* Menu Icon */
+  
+  .hamb{
+      cursor: pointer;
+      float: right;
+      padding: 40px 20px;
+  }
+  
+  
+  .hamb-line {
+      background: var(--white);
+      display: block;
+      height: 2px;
+      position: relative;
+      width: 24px;
+      
+  }
+  
+  .hamb-line::before,
+  .hamb-line::after{
+      background: var(--white);
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all .2s ease-out;
+      width: 100%;
+  }
+  
+  .hamb-line::before{
+      top: 5px;
+  }
+  
+  .hamb-line::after{
+      top: -5px;
+  }
+  
+  
+  .side-menu {
+      display: none;
+  }
+  
+  /* Toggle menu icon */
+  
+  .side-menu:checked ~ nav{
+      max-height: 100%;
+  }
+  
+  .side-menu:checked ~ .hamb .hamb-line {
+      background: transparent;
+  }
+  
+  .side-menu:checked ~ .hamb .hamb-line::before {
+      transform: rotate(-45deg);
+      top:0;
+  
+  }
+  
+  .side-menu:checked ~ .hamb .hamb-line::after {
+      transform: rotate(45deg);
+      top:0;
+  }
+  
+  
+  /* Responsiveness Tablet */
+  
+  @media (min-width: 992px) {
+      .nav{
+          max-height: none;
+          top: 0;
+          position: relative;
+          float: right;
+          width: fit-content;
+          background-color: transparent;
+  
+      }
+  
+      .menu li{
+          float: left;
+          margin: 20px;
+      }
+  
+      .menu a:hover{
+          background-color: transparent;
+          color: var(--grey);
+          
+      }
+      
+      .hamb{
+          display: none;
+      }
+  
+  }
+  
+  /* Responsive Mobile first design*/
+  header .logo img{
+      width: 200px;
+      display: flex;
+      padding: 10px 0;
+  }
+  
+  header nav .menu li {
+      font-size: 1rem;
+      text-transform: uppercase;
+      /* margin:0.5rem 0; */
+      padding:2px 5px 0px 5px;
+  }
+  
+  header ul .book-now-menu a{
+      color:#ffffff;
+      font-weight: 600;
+      border: 2px solid var(--orange);
+      text-align: center;
+      border-radius: 5px;
+  }
+
+
+  header ul .book-now-menu a:hover {
+    background-color: #EAA26A;
+    color: #fff;
+    cursor: pointer;
+}
+/* .hello-name {
+    border-left: 2px solid #767676;
+    border-right: 2px solid #767676;
+} */
+.cart-menu{
+    font-size: 1.25rem;
+}
+  /* =========================== */
+
+
+/********* FOOTER STARTS HERE ***********/
+
+footer{
+	background-color: #CEE8DD;
+	width: 100%;
+}
+
+footer .row{
+	display: flex;
+	justify-content: space-between;
+	padding: 40px;
+}
+
+footer .footer-col{
+	display: block;
+	max-width: 33%;
+	font-size: 1em;
+}
+
+footer #footer_quote p{
+	text-align: left;
+	color: #666666;
+    line-height: 1.5rem;
+}
+
+footer .footer-col ul{
+	list-style-type: none;
+}
+
+footer .footer-col h4{
+	color: #477E6A;
+	margin-bottom: 15px;
+	font-size: 1rem;
+	position: relative;
+}
+
+footer #contact_us ul li{
+	display: flex;
+	line-height: 1.5rem;
+}
+
+footer #contact_us ul li a {
+	text-decoration: none !important;
+	color: #666666;
+}
+    
+footer #contact_us ul li a i{
+	/* padding: 0.5em 0.5em 0.5em 0; */
+    margin-right: 0.5rem;
+}
+
+footer .footer-col ul li, .footer-col p{
+	color: white;
+	font-size: 1em;
+	opacity:0.8;
+	transition: 0.5s;
+}
+
+footer .footer-col p{
+	font-size: 1em;
+}
+
+footer #follow_us ul{
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+
+footer #follow_us ul li img {
+max-width: 70%;
+height: auto;
+color: #ffffff;
+}
+
+footer .footer_logo{
+	max-width: 160px;
+}
+
+footer .footer-col-icon{
+	padding-top: 0.5em;
+}
+
+footer .footer-col-icon ul li{
+	padding: 0 0.375em 0 0;
+}
+
+footer #copyright{
+	background-color: #0C0C22;
+	color: #B2B2B2;
+	font-size: 1em;
+	padding: 0.75em;
+	text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  footer .row{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	}
+
+	footer .container{
+		width: 100%;
+	}
+
+	footer .footer-col{
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 40px;
+	}
+
+	footer #footer_quote p{
+    text-align: center;
+    color: #D1D1D1;
+    width: 320px;
+	}
+
+	footer .footer-col-icon {
+		margin: 0 auto;
+	  max-width: 200px;
+	}
+
+	footer #contact_us ul li{
+		line-height: 26px;
+	}
+
+	footer #follow_us{
+		margin-bottom: 0px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+    footer .row{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    footer .container{
+      width: 100%;
+    }
+
+    footer #footer_quote p{
+      width: 250px;
+    }
+
+    footer footer-col h4{
+    font-size: 1.25em	;
+  }
+
+  footer #copyright{
+    font-size: 0.5em;
+  }
+}
+/********* FOOTER ENDS HERE ***********/
+
+
+

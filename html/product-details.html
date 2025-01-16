@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../images/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/headerfooter.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/product-details.css">
+  <script src="../js/index.js"></script>
+  <title>Product Details - EcoHimalaya</title>
+  <style>
+    /* Disabled state style for the "Add to Cart" button */
+        #add-to-cart-button:disabled {
+        background-color: #d3d3d3; /* Light gray background */
+        color: #a9a9a9; /* Darker gray text */
+        cursor: not-allowed; /* Not-allowed cursor */
+        border: 1px solid #ccc; /* Light gray border */
+        box-shadow: none; /* Remove box shadow */
+        }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <a href="index.html" class="logo"><img src="../images/logo.png" alt="Company Logo"></a>
+    <input class="side-menu" type="checkbox" id="side-menu" />
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <nav class="nav">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Product</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+        <li><a href="faq.html">Faq</a></li>
+        <li class="hello-name">Hello, <span id="name-user">Eco-Himalaya</span></li>
+        <li><a class="cart-menu" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="product-details">
+    <section class="container">
+      <div class="product-details-container">
+        <div class="product-image">
+          <img id="product-image" src="" alt="Product Image">
+        </div>
+        <div class="product-info">
+          <h1 id="product-name"></h1>
+          <p id="product-description"></p>
+          <p id="product-price"></p>
+          <p id="quantity"></p>
+          <button class="add-to-cart-button" id="add-to-cart-button" onclick="addToCart()">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="footer-col" id="footer_quote">
+          <a href="index.html" alt="Footer Logo"><img src="../images/logo.png" class="footer_logo"></a><br>
+          <p>"We Empower confidence through personalized care and exquisite services. Discover your true beauty with EcoHimalaya Mart."</p>
+        </div>
+        <div class="footer-col" id="contact_us">
+          <h4>CONTACT US</h4>
+          <ul>
+            <li><a href="https://www.google.com/maps/"><i class="fa-solid fa-location-dot"></i>123 North York,ON</a></li>
+            <li><a href="tel:+1234567898"><i class="fa-solid fa-phone"></i>+1234567898</a></li>
+            <li><a href="mailto:everestsalon@gmail.com"><i class="fa-solid fa-envelope"></i>EcoHimalaya@gmail.com</a></li>
+          </ul>
+        </div>
+        <div class="footer-col" id="follow_us">
+          <h4>FOLLOW US</h4>
+          <div class="footer-col-icon">
+            <ul>
+              <li><a href="https:www.instagram.com"><img src="../images/instagram.svg"></a></li>
+              <li><a href="https:www.facebook.com"><img src="../images/facebook.svg"></a></li>
+              <li><a href="https:www.youtube.com"><img src="../images/youtube.svg"></i></a></li>
+              <li><a href="https:www.x.com"><img src="../images/x.svg"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="copyright">
+      <p>Copyright &copy;2024 EcoHimalaya Market. All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    // Function to load product details from localStorage
+    function loadProductDetails() {
+      const product = JSON.parse(localStorage.getItem('selectedProduct'));
+
+      if (product) {
+        document.getElementById('product-image').src = product.image;
+        document.getElementById('product-name').innerText = product.name;
+        document.getElementById('product-description').innerText = product.description;
+        document.getElementById('quantity').innerText = `Quantity:${product.quantity}`;
+        document.getElementById('product-price').innerText = `$${product.price}`;
+
+        // Check if the product is already in the cart
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const isProductInCart = cart.some(item => item.productId === product.productId);
+
+        // Disable button if the product is in the cart
+        if (isProductInCart) {
+          const button = document.getElementById('add-to-cart-button');
+          button.disabled = true;
+          button.innerText = 'Added to Cart';
+        }
+      } else {
+        alert('Product details not found.');
+      }
+    }
+
+    // Function to add product to the cart
+    function addToCart() {
+      const product = JSON.parse(localStorage.getItem('selectedProduct'));
+
+      if (product) {
+        // Get or initialize the cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const productIndex = cart.findIndex(item => item.productId === product.productId);
+
+        // Update quantity if the product is already in the cart, otherwise add new
+        if (productIndex > -1) {
+          cart[productIndex].quantity += 1;
+        } else {
+          product.quantity = 1;
+          cart.push(product);
+        }
+
+        // Save the updated cart to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Disable the button and update its text
+        const button = document.getElementById('add-to-cart-button');
+        button.disabled = true;
+        button.innerText = 'Added to Cart';
+
+        // Optional: Show an alert or update UI to notify the user
+        alert('Product added to cart!');
+      } else {
+        alert('Product details not found.');
+      }
+    }
+
+    // Call the function to load product details on page load
+    window.onload = loadProductDetails;
+  </script>
+
+</body>
+
+</html>

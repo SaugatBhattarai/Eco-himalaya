@@ -1,0 +1,14 @@
+#service-page #service-list{
+    padding:1rem 0
+}
+
+#service-page #heading{
+    text-align: center;
+    font-size: 1.25em;
+    color: #006699;
+    padding: 2.5em 0 1em 0;
+} 
+
+#service-page{
+    margin-bottom: 2rem;
+}

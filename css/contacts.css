@@ -1,0 +1,31 @@
+.maps h4{
+    text-align: center;
+    font-size: 1.25em;
+    color: #477E6A;
+    /* padding: 1em 0 0 0; */
+    text-align: center;
+}
+
+#contact-page .contact-info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    /* padding: 1rem 0 1em 0; */
+}
+
+#contact-page .icon-container .fa-solid{
+    font-size: 2.5rem;
+    color: #477E6A;
+}
+
+#contact-page .icon-container{
+    margin: 2em auto;
+}
+
+#contact-page .icon-container a{
+    color:#000000;
+    opacity: 0.8;
+}
+

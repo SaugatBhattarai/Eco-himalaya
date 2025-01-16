@@ -1,0 +1,251 @@
+{
+  "utensils": [
+    {
+      "image": "../images/products/ut-product1.jpg",
+      "name": "Bamboo Toothbrush",
+      "description": "Sustainable Bamboo Toothbrush - Biodegradable, Plastic-Free Oral Care Solution",
+      "price": "35",
+      "category": "utensils",
+      "productId": "utensils-0",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/ut-product2.jpg",
+      "name": "Coco- Spoon set",
+      "description": "Coconut Shell Spoon Set - Handcrafted, Durable, Natural, Eco-Friendly Kitchenware",
+      "price": "40",
+      "category": "utensils",
+      "productId": "utensils-1",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/ut-product3.jpg",
+      "name": "Bamboo Kitchen Basics",
+      "description": "Bamboo Cooking Spoon & Spatula Set - Durable, Sustainable, Eco-Friendly Kitchen Essentials",
+      "price": "57",
+      "category": "utensils",
+      "productId": "utensils-2",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/ut-product4.jpg",
+      "name": "Comb",
+      "description": "Bamboo Comb - Sustainable, Natural, Anti-Static, Eco-Friendly Hair Care Solution",
+      "price": "35",
+      "category": "utensils",
+      "productId": "utensils-3",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/ut-product5.jpg",
+      "name": "Cutting Board",
+      "description": "Bamboo Cutting Board - Durable, Sustainable, Eco-Friendly Kitchen Essential",
+      "price": "40",
+      "category": "utensils",
+      "productId": "utensils-4",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/ut-product6.jpg",
+      "name": "Loofah Sponge",
+      "description": "Natural Loofah Sponge - Biodegradable, Exfoliating, Eco-Friendly Bath Essential",
+      "price": "57",
+      "category": "utensils",
+      "productId": "utensils-5",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/ut-product7.jpg",
+      "name": "Ceramic Couscous Platter",
+      "description": "Platter - Handcrafted, Stylish, Durable, Eco-Friendly Dining Serveware",
+      "price": "35",
+      "category": "utensils",
+      "productId": "utensils-6",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/ut-product8.jpg",
+      "name": "Bamboo Cups",
+      "description": "Bamboo Cups - Reusable, Sustainable, Stylish, Eco-Friendly Drinkware",
+      "price": "40",
+      "category": "utensils",
+      "productId": "utensils-7",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/ut-product9.jpg",
+      "name": "Bamboo Bottles",
+      "description": "Bamboo Bottles - Reusable, Sustainable, Eco-Friendly Drinkware for Everyday Use",
+      "price": "57",
+      "category": "utensils",
+      "productId": "utensils-8",
+      "isAddedToCart": false
+    }
+  ],
+  "bags": [
+    {
+      "image": "../images/products/bag-product1.jpg",
+      "name": "Swoyambhu Eye Hemp Bag",
+      "description": "Spacious main pocket, front pocket and two side pockets for a small water bottle or umbrella.",
+      "price": "40",
+      "category": "bags",
+      "productId": "bags-0",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/bag-product2.jpg",
+      "name": "Hemp Side Bag",
+      "description": "Handmade with 100% hemp with heavy duty cotton.",
+      "price": "40",
+      "category": "bags",
+      "productId": "bags-1",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/bag-product3.jpg",
+      "name": "Everyday Bag",
+      "description": "Handmade with 100% hemp with heavy duty cotton.",
+      "price": "35",
+      "category": "bags",
+      "productId": "bags-2",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/bag-product4.jpg",
+      "name": "Toiletry Bag",
+      "description": "Made with Fairtrade Certified Organic Cotton!",
+      "price": "40",
+      "category": "bags",
+      "productId": "bags-3",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/bag-product5.jpg",
+      "name": "Work Tote Bag",
+      "description": "Made from certified organic and fairtrade cotton.",
+      "price": "57",
+      "category": "bags",
+      "productId": "bags-4",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/bag-product6.jpg",
+      "name": "Duffel Bag",
+      "description": "Go anywhere with the Organic Cotton Duffle Bag from Terra Thread.",
+      "price": "35",
+      "category": "bags",
+      "productId": "bags-5",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/bag-product7.jpg",
+      "name": "Pencil Bag",
+      "description": "This Batai pencil bag is packed with all the goodness.",
+      "price": "40",
+      "category": "bags",
+      "productId": "bags-6",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/bag-product8.jpg",
+      "name": "Everyday Backpack",
+      "description": "Perfect for school, work, or traveling, the Backpack from Terra Thread.",
+      "price": "57",
+      "category": "bags",
+      "productId": "bags-7",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/bag-product9.jpg",
+      "name": "Gift Bags",
+      "description": "Brown Gift Bags with Handles - 10x5x13 Inch 100 Pack Medium Kraft.",
+      "price": "35",
+      "category": "bags",
+      "productId": "bags-8",
+      "isAddedToCart": false
+    }
+  ],
+  "body_wears": [
+    {
+      "image": "../images/products/wear-product1.jpg",
+      "name": "Men's Work T-Shirt",
+      "description": "A comfortable pocket tee for hard work, built with a breathable blend.",
+      "price": "40",
+      "category": "body_wears",
+      "productId": "body_wears-0",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/wear-product2.jpg",
+      "name": "Men’s Hemp Shorts",
+      "description": "Plain-front shorts made of lightweight organic cotton/hemp fabric for cool-wearing.",
+      "price": "57",
+      "category": "body_wears",
+      "productId": "body_wears-1",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/wear-product3.jpg",
+      "name": "Hemp Quarter Socks",
+      "description": "Cozy-wearing quarter-length socks are as tough as they are easygoing.",
+      "price": "35",
+      "category": "body_wears",
+      "productId": "body_wears-2",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/wear-product4.jpg",
+      "name": "All Seasons Hemp Pants",
+      "description": "Lightweight yet durable double-knee work pants made all Seasons.",
+      "price": "40",
+      "category": "body_wears",
+      "productId": "body_wears-3",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/wear-product5.jpg",
+      "name": "Women's Tiered Dress",
+      "description": "A long, easy-wearing dress made of lightweight 55% hemp/45% TENCEL",
+      "price": "57",
+      "category": "body_wears",
+      "productId": "body_wears-4",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/wear-product6.jpg",
+      "name": "Hemp Canvas Apron",
+      "description": "All-purpose work and shop apron is built for durable and breathable.",
+      "price": "35",
+      "category": "body_wears",
+      "productId": "body_wears-5",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/wear-product7.jpg",
+      "name": "Women's Harbor T-Shirt",
+      "description": "Designed for hot and humid weather, this tee is made from a cool blend of hemp.",
+      "price": "40",
+      "category": "body_wears",
+      "productId": "body_wears-6",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/wear-product8.jpg",
+      "name": "Asatre Hemp Hat",
+      "description": "Just in from Nepal! Perfect for summer...at the beach, pool, boating & sunbathing.",
+      "price": "57",
+      "category": "body_wears",
+      "productId": "body_wears-7",
+      "isAddedToCart": false
+    },
+    {
+      "image": "../images/products/wear-product9.jpg",
+      "name": "Unisex Hoodie",
+      "description": "Made from a blend of organic cotton and lightweight polyester.",
+      "price": "35",
+      "category": "body_wears",
+      "productId": "body_wears-8",
+      "isAddedToCart": false
+    }
+  ]
+}
