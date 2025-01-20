@@ -1,4 +1,4 @@
-This is the semester Project. 
+This is the semester Project. Tech Stack HTML/CSS
 
 Project Group Member:
 1. Saugat Bhattarai
