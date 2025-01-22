@@ -1,4 +1,5 @@
-This is the semester Project. Tech Stack HTML/CSS
+Tech Stack HTML/CSS
+UI designed in Figma.
 
 Project Group Member:
 1. Saugat Bhattarai
